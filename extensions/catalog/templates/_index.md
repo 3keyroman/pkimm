@@ -1,7 +1,7 @@
 ---
 date: "2026-05-13T7:00:00Z"
 title: Extension documentation template
-_build:
+build:
   render: never
   list: never
 
