@@ -91,7 +91,7 @@ It consists of:
 Properly documented policies keeps the PKI assets trusted over the time and serves as a basis for integrated processes and procedures. It is a living management system that is continuously updated and changed as technologies, security, and compliance requirements change.
 
 The Certificate Policy (CP) defines the overall policies and requirements of a PKI, the Certification Practice Statement (CPS) provides detailed operational procedures followed by the Certification Authority (CA), and the disclosure statement offers transparency about the CA's identity and services to relying parties.
-",G.policies-and-documentation.policy-scope,he scope of policies is defined and documented,"Each PKI implementation and use case is different, therefore it requires different care. The scope of policies that are applicable for the implementation should be defined and documented. When the proper description of the policies scope is provided, it helps all parties involved to understand the purpose of the policies and their applicability.
+",G.policies-and-documentation.policy-scope,The scope of policies is defined and documented,"Each PKI implementation and use case is different, therefore it requires different care. The scope of policies that are applicable for the implementation should be defined and documented. When the proper description of the policies scope is provided, it helps all parties involved to understand the purpose of the policies and their applicability.
 
 The scope can include the following:
 - Identification of the policies required for the implementation
@@ -1864,8 +1864,7 @@ Different methods can be applied to provide security awareness, for example:
 
 References
 - NIST SP 800-50 Building an Information Technology Security Awareness and Training Program
-- PCI SSC - Best Practices for Implementing a
-  Security Awareness Program
+- PCI SSC - Best Practices for Implementing a Security Awareness Program
 - Raising Awareness of Cybersecurity"
 R.knowledge-and-training,Knowledge and training,"The purpose of this category is to ensure that the PKI personnel have the required knowledge and skills to perform their duties and responsibilities.
 Education and continuous gathering of required knowledge and skills to manage the PKI is important to be aware and properly react to current trends and threats that may impact the PKI.

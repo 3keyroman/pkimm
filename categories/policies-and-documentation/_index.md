@@ -35,7 +35,7 @@ The Certificate Policy (CP) defines the overall policies and requirements of a P
 
 | ID | Requirement | Weight |
 |----|-------------|-------:|
-| [`policy-scope`](#policy-scope) | he scope of policies is defined and documented | 2 |
+| [`policy-scope`](#policy-scope) | The scope of policies is defined and documented | 2 |
 | [`certificate-policy`](#certificate-policy) | Certificate policy is documented and published | 5 |
 | [`practice-statement`](#practice-statement) | Certification practice statement is documented and published | 5 |
 | [`disclosure-statement`](#disclosure-statement) | Disclosure statement is documented and published | 4 |
@@ -44,7 +44,7 @@ The Certificate Policy (CP) defines the overall policies and requirements of a P
 ## Details
 
 <a id="policy-scope"></a>
-### he scope of policies is defined and documented
+### The scope of policies is defined and documented
 
 #### Guidance
 
