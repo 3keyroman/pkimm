@@ -18,6 +18,8 @@ Extensions may:
 
 Extensions are optional and independent. They can be added or removed without changing the core PKI MM model or affecting the baseline maturity calculation.
 
+Browse the published extensions in the [extension catalog](https://pkic.org/wg/pkimm/extensions/).
+
 ## How extensions influence maturity
 
 > 💡 **Concept**
@@ -46,6 +48,6 @@ flowchart TD
 
 - **[Extension structure](./structure/)** — what fields make up an extension definition (metadata, Relevance, Overlays). Read this if you are authoring a new extension.
 - **[Scoring model](./scoring/)** — formulas, order-of-operations, and the end-to-end worked example. Read this if you are implementing tooling for an extension.
-- **[Extension catalog](./catalog/)** — the list of working-group extensions with documentation and YAML definitions.
+- **[Extension catalog](https://pkic.org/wg/pkimm/extensions/)** — the list of working-group extensions with documentation and YAML definitions, published from the `pkimm-extensions` repository.
 - **[Extension JSON Schema](./extension.schema-1.0.0.json)** — the canonical machine-readable contract for extension YAML files.
 - **[Extension framework FAQ](../faq/#extension-framework)** — answers to common questions including non-destructive design, multi-extension behavior, and overlay tunability.

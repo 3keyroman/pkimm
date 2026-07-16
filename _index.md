@@ -49,7 +49,7 @@ The assessment process defines steps to scope, assess, evaluate, and report the 
 ## Assessment tools
 
 The following assessment tools are available to support the assessment process:
-- [PKI maturity assessment tool](./tools/) - Excel spreadsheet that can be used to perform the assessment and generate a report.
+- [PKI maturity self-assessment](https://pkic.org/wg/pkimm/assessment/) - web-based self-assessment tool. The earlier Excel-based assessment tool has been retired in favor of this tool and remains available under the 1.0.0 tag / website section.
 
 
 ```mermaid

@@ -57,7 +57,7 @@ Growing importance of PKI maturity assessment is also reflected in the increasin
 
 ## Where can I access the assessment tools?
 
-Available assessment tools and resources can be found in the [Tools](../tools/) section of the PKI MM documentation. The tools include the PKI maturity assessment questionnaire, guidance on conducting the assessment, and templates for reporting the assessment results.
+Available assessment tools and resources can be found via the [PKI maturity self-assessment](https://pkic.org/wg/pkimm/assessment/), the web-based tool that superseded the earlier Excel-based assessment tool (still available under the 1.0.0 tag / website section). The tools include the PKI maturity assessment questionnaire, guidance on conducting the assessment, and templates for reporting the assessment results.
 
 The tools are designed to help organizations assess the maturity of their PKI and identify areas for improvement and are updated regularly to reflect the latest best practices and industry standards.
 
