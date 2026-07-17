@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-Content repository for the **PKI Maturity Model (PKIMM)**, maintained by the PKI Consortium PKIMM working group. The content is rendered at https://pkic.org/pkimm by an external Hugo-based site — this repo holds the source markdown, the canonical model data, and assessment tools. There is **no build system, no test suite, and no application code** here. Treat changes as documentation/data edits, not software changes.
+Content repository for the **PKI Maturity Model (PKIMM)**, maintained by the PKI Consortium PKIMM working group. The content is rendered at https://pkic.org/pkimm by an external Hugo-based site — this repo holds the source markdown, the canonical model data, and the assessment methodology pages. There is **no build system, no test suite, and no application code** here. Treat changes as documentation/data edits, not software changes.
 
 ## Repository layout
 
@@ -19,13 +19,10 @@ Content repository for the **PKI Maturity Model (PKIMM)**, maintained by the PKI
 - `data/pkimm-model.schema-1.0.0.json` — JSON Schema for the 1.0.0 YAML shape (retroactively renamed from `pkimm-model.schema.json`).
 - `data/pkimm-references.yaml` — **independently-versioned references catalog**. Per-requirement `references` fields in the 2.0.0 model contain arrays of IDs from this catalog. Edit here to update reference metadata without touching the model YAML.
 - `data/pkimm-references.schema-1.0.0.json` — JSON Schema for the references catalog.
-- `extensions/extension.schema-1.0.0.json` — JSON Schema for PKIMM extension files.
-- `extensions/catalog/pqc/pqc-extension.yaml` — PQC (Post-Quantum Cryptography) extension version 0.2.0, compatible with PKIMM 2.0.0.
+- `extensions/` — extension framework: schema (`extension.schema-1.0.0.json`), structure and scoring documentation. The extension framework defines the non-destructive, composable overlay/relevance model (schema/structure/scoring); the catalog of published extension YAML definitions now lives in the separate `pkimm-extensions` repository, rendered at https://pkic.org/wg/pkimm/extensions/.
 - `scripts/` — authoring and validation scripts (see "Authoring workflow" below).
-- `tools/` — published Excel assessment tools (`PKI_Maturity_Assessment_Tool_*.xlsx`, `PKI_Maturity_Self_Assessment_Tool_*.xlsx`).
-- `integrations/eramba/` — per-schema-version converters that produce Eramba-importable CSV packages.
-  - `convert-yaml-data-to-csv-package-1.0.0.py` — reads `data/pkimm-model-1.0.0.yaml` (schema 1.0.0) and writes `pkimm-1.0.0.csv`.
-  - `convert-yaml-data-to-csv-package-2.0.0.py` — reads `data/pkimm-model-2.0.0.yaml` (schema 2.0.0) and `data/pkimm-references.yaml`; writes `pkimm-2.0.0.csv`. Future schema versions get their own script alongside.
+- Integration converters (e.g., the Eramba CSV package generators) now live in the separate `pkimm-integrations` repository, rendered at https://pkic.org/wg/pkimm/integrations/.
+- The published Excel assessment tools (`PKI_Maturity_Assessment_Tool_*.xlsx`, `PKI_Maturity_Self_Assessment_Tool_*.xlsx`) have been retired from this repo, superseded by the web self-assessment; they remain available via the `1.0.0` tag and the 1.0.0 website section.
 - `release-notes/` — per-version release notes (`release-notes/1.0.0/`, `release-notes/2.0.0/`) and a template at `release-notes/templates/`. See the release notes for consumer-facing changes and migration guidance.
 - `faq/`, `.github/README.md` — supplementary content; the GitHub-rendered README lives in `.github/README.md`, not the repo root.
 

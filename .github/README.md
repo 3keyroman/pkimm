@@ -52,9 +52,9 @@ pip install -r scripts/requirements-dev.txt
 - `model/` — narrative pages: vocabulary, modules, categories overview, references summary.
 - `release-notes/` — per-version release notes. Each version subdirectory uses the template at `release-notes/templates/_index.md`.
 - `assessment/` — assessment process pages (scoping, assessment, evaluation, reporting, implementation).
-- `extensions/` — extension framework schema and the catalog of published extensions.
-- `tools/` — Excel-based assessment tools and the web self-assessment configuration.
-- `integrations/` — converters that produce artifacts for downstream tools (e.g., Eramba CSV packages).
+- `extensions/` — extension framework documentation, structure, scoring, and JSON schema. The catalog of published extensions lives in the separate [`pkimm-extensions`](https://pkic.org/wg/pkimm/extensions/) repository.
+- Converters that produce artifacts for downstream tools (e.g., Eramba CSV packages) live in the separate `pkimm-integrations` repository.
+- Excel-based assessment tools have been retired in favor of the web self-assessment; the last Excel tools remain available under the `1.0.0` tag / website section.
 - `scripts/` — authoring scripts (generator, validator) and their tests.
 
 ### Conventions
@@ -74,7 +74,7 @@ Edit `data/pkimm-model-<version>.yaml` under the relevant module. Use a short ke
 
 ### Adding an extension
 
-Each extension is a single YAML file under `extensions/catalog/<id>/<id>-extension.yaml` validating against `extensions/extension.schema-1.0.0.json`. Declare which model versions the extension targets in its `compatibility` array. Extension-specific references go in an inline top-level `references:` block on the extension; common references resolve against the global catalog.
+Extension definitions are authored in the separate [`pkimm-extensions`](https://pkic.org/wg/pkimm/extensions/) repository, as a single YAML file per extension validating against this repo's `extensions/extension.schema-1.0.0.json`. Declare which model versions the extension targets in its `compatibility` array. Extension-specific references go in an inline top-level `references:` block on the extension; common references resolve against the global catalog. See the `pkimm-extensions` repository for its authoring workflow.
 
 ## License & IPR
 
