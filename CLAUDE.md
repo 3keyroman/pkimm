@@ -1,3 +1,11 @@
+---
+# Not website content. This repository is mounted as Hugo content by pkic.org,
+# so the file needs an explicit exclusion to stay unpublished.
+build:
+  render: never
+  list: never
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -29,6 +37,7 @@ Content repository for the **PKI Maturity Model (PKIMM)**, maintained by the PKI
 ## Authoring conventions
 
 - All markdown files use Hugo-style YAML front matter (`date`, `title`, `weight`, optional `draft`, `sideMenu`, `tags`, `summary`, hero fields on `_index.md`). Keep `weight` consistent with intended navigation order (category folders no longer carry a numeric prefix; order is determined by `weight:` alone).
+- `CLAUDE.md` is not website content: pkic.org mounts this repository as Hugo content, so the file carries `build: render: never` / `list: never` front matter to stay unpublished. Keep that block in place.
 - Category files mirror `categories/templates/_index.md` exactly — the table columns, anchor-link pattern in the Requirements overview (`[id](#requirement-slug)`), and the per-requirement Guidance/Assessment/References subsections are load-bearing for both readers and downstream tooling.
 - Mark in-progress category drafts with `draft: true` in the front matter; remove it when the category is ready to publish.
 - The maturity-level vocabulary (2.0.0) is: `1 - Initial`, `2 - Foundational`, `3 - Advanced`, `4 - Managed`, `5 - Optimized`. Note: 1.0.0 used "Basic" for level 2; "Foundational" is the 2.0.0 name. Don't introduce new level names.
