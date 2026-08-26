@@ -40,6 +40,7 @@ The Certificate Policy (CP) defines the overall policies and requirements of a P
 | [`practice-statement`](#practice-statement) | Certification practice statement is documented and published | 5 |
 | [`disclosure-statement`](#disclosure-statement) | Disclosure statement is documented and published | 4 |
 | [`policy-review`](#policy-review) | Policies are periodically reviewed and updated | 3 |
+| [`validation-policy`](#validation-policy) | Certificate validation policy is documented and applied | 5 |
 
 ## Details
 
@@ -182,3 +183,47 @@ Policies are living documents that are continuously updated and changed as techn
 - [RFC 3647 - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework](https://tools.ietf.org/html/rfc3647)
 - [ISO/IEC 27001 - Information security management systems](https://www.iso.org/standard/54534.html)
 - [ETSI EN 319 401 - General Policy Requirements for Trust Service Providers](https://www.etsi.org/deliver/etsi_en/319400_319499/319401/02.03.01_60/en_319401v020301p.pdf)
+
+<a id="validation-policy"></a>
+### Certificate validation policy is documented and applied
+
+#### Guidance
+
+Trust decisions are only as strong as the rules used to make them. Accepting a certificate is a security decision, and that decision is governed by a validation policy whether or not the policy has been written down. An organization that issues no certificates of its own still makes this decision continuously, and it is the point at which its trust is established or lost.
+
+The organization should document how certificates are validated, including:
+- the trust anchors accepted for each use case, how they are recorded, and the approval required to add, replace, or withdraw one
+- certification path construction and path validation, and the enforcement of name constraints, key usage, and extended key usage
+- the certificate policy identifiers that are required or rejected
+- the verification that the certificate identifies the subject the relying system expects, such as the host, service, person, or device it intends to reach
+- the treatment of certificate validity, including rejection of expired or not yet valid certificates, and any maximum certificate lifetime the organization will accept
+- the revocation mechanisms that are used, the status freshness that is acceptable, and the behavior when the status cannot be determined
+
+A valid certification path does not by itself establish that a certificate is the right one to accept. A correctly issued certificate for a different subject may pass path validation, because the identity the relying system expects is not something the path itself expresses.
+
+A trust anchor is trusted input to path validation rather than a certificate validated within the path. Trust in an anchor is therefore withdrawn by removing, replacing, disabling, or constraining it in the systems that hold it, not by revocation.
+
+A confirmed revoked status is not a policy choice; the certificate is rejected. The deliberate decision applies to the outcomes that leave the status undetermined, such as an unknown status, a stale or malformed response, an unreachable responder, or the absence of any usable status source. Rejecting on an undetermined result protects the trust decision at the cost of availability, and accepting protects availability at the cost of the trust decision.
+
+Validity and revocation are evaluated at the validation time that applies to the use case, which for long-term signature validation may be the time of signing rather than the present.
+
+A documented policy and a correctly configured system are different things, and the policy is only effective where it is enforced. Approved algorithms and parameters are governed under the cryptography category, and distribution of an organization's own root certificates to the parties that rely on them under certificate lifecycle management. This requirement applies to every system the organization operates or controls that consumes certificates, whether or not the organization issues any of its own.
+
+#### Assessment
+
+- Documented certificate validation rules for the systems that consume certificates
+- The documented rules cover each use case and each class of system that consumes certificates
+- Documented set of accepted trust anchors, and the approval required to change it
+- Evidence that the trust stores and validation settings deployed on those systems match the documented rules
+- Functional evidence that a certificate is rejected when the path, the subject identity, the intended purpose, or the validity period does not meet the documented rules
+- Documented behavior when revocation status cannot be determined, with justification
+- Documented and approved deviations from the validation policy
+
+#### References
+
+- [RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile](https://datatracker.ietf.org/doc/html/rfc5280)
+- [RFC 6024 - Trust Anchor Management Requirements](https://datatracker.ietf.org/doc/html/rfc6024)
+- [RFC 6960 - X.509 Internet Public Key Infrastructure Online Certificate Status Protocol (OCSP)](https://datatracker.ietf.org/doc/html/rfc6960)
+- [RFC 9525 - Service Identity in TLS](https://datatracker.ietf.org/doc/html/rfc9525)
+- [NIST SP 800-52 Rev. 2 - Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf)
+- [ISO/IEC 27099 - Public key infrastructure](https://www.iso.org/standard/56590.html)
